@@ -4,14 +4,14 @@ import './App.css';
 import {Header} from "./myComponents/Header";
 import {Footer} from "./myComponents/Footer";
 import {TextForm} from "./myComponents/TextForm";
-import { About } from './myComponents/About';
+// import { About } from './myComponents/About';
 import { Alert } from './myComponents/Alert';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route
+// } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState('light');
   const toggleMode = ()=>{
@@ -43,19 +43,22 @@ function App() {
   return (
     <>
     
-    <Router>
+//     <Router>
     <Header title="Text Analyzer" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert} />
-    <Switch>
-          <Route exact path="/about">
-            <About mode={mode}  />
-          </Route>
-          <Route exact path="/">
-          <TextForm heading="Enter text here" mode={mode} showalert={showalert}/>
-          </Route>
-        </Switch>
-    </Router>
-    <Footer/>
+    <TextForm heading="Enter text here" mode={mode} showalert={showalert}/>
+       <Footer/>
+    
+//     <Switch>
+//           <Route exact path="/about">
+//             <About mode={mode}  />
+//           </Route>
+//           <Route exact path="/">
+//           <TextForm heading="Enter text here" mode={mode} showalert={showalert}/>
+//           </Route>
+//         </Switch>
+//     </Router>
+//     <Footer/>
     </>
   );
 }
